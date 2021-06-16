@@ -15,7 +15,7 @@ theme                    : "minimal-mistakes-jekyll"
 minimal_mistakes_skin    : "aqua" # "air", "default", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "ko-KR"
+locale                   : "en-US"
 title                    : "It's you!"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
@@ -100,9 +100,6 @@ author:
   location         : 
   email            : "tyrosine1153@gmail.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "tyrosine1153@gmail.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/tyrosine1153"
@@ -252,3 +249,5 @@ defaults:
       comments: # true
       share: true
       related: true
+      mathjax: true
+      sidebar_main: true
