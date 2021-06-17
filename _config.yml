@@ -23,14 +23,14 @@ name                     : "Tyrosine1153"
 description              : "그때그때 배운 것을 기록합니다."
 url                      : "https://tyrosine1153.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "https://github.com/tyrosine1153/tyrosine1153.github.io"
+repository               : "tyrosine1153/tyrosine1153.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "mirror.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
+  provider               : utterances # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -41,8 +41,8 @@ comments:
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
   utterances:
-    theme                : # "github-light" (default), "github-dark"
-    issue_term           : # "pathname" (default)
+    theme                : "icy-dark" # "github-light" (default), "github-dark"
+    issue_term           : "pathname" # "pathname" (default)
   staticman:
     branch               : # "master"
     endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
@@ -53,7 +53,7 @@ atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
 search                   : true
-search_full_content      : # true, false (default)
+search_full_content      : true
 search_provider          : # lunr (default), algolia, google
 algolia:
   application_id         : # YOUR_APPLICATION_ID
@@ -246,8 +246,15 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
       mathjax: true
       sidebar_main: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
