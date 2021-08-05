@@ -23,7 +23,7 @@ name                     : "Tyrosine1153"
 description              : "그때그때 배운 것을 기록합니다."
 url                      : "https://tyrosine1153.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "tyrosine1153/tyrosine1153.github.io"
+repository               : "tyrosine1153/blog-comments"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "mirror.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
