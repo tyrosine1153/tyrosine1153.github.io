@@ -17,7 +17,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "SQL" %}
-                        <li><a href="/categories/stl" class="">SQL ({{category[1].size}})</a></li>
+                        <li><a href="/categories/sql" class="">SQL ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -35,7 +35,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Development" %}
-                        <li><a href="/categories/stl" class="">개발 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/development" class="">개발 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
