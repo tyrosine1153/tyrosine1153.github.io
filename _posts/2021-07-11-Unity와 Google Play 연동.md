@@ -3,9 +3,9 @@ title: "[Unity] Unity에서 Google Play를 이용해 로그인하기"
 excerpt: "Google Play를 연결한 Firebase를 연결한 Unity"
 
 categories:
-  - 개발
+  - development
 tags: 
-  - [Unity, 개발]
+  - [Unity, development]
 
 toc: true
 toc_sticky: true
