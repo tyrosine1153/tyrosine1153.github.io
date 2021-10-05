@@ -1,6 +1,6 @@
 ---
 title: "[Unity] Unity에서 안드로이드앱으로 문자 보내기"
-excerpt: "Unity에서 Android 앱을 만들때, 문자를 보내는 기능을(???) 구현하기 위해서 정리했습니다. 정말정말 쓸데 없지만 그래서인지 정리된 글이 없더라구요."
+excerpt: "Unity에서 Android 앱을 만들때, 문자를 보내는 기능을(???) 구현하기 위해서 사용할 내용입니다. 정말정말 쓸데 없지만 그래서인지 정리된 글이 드물어서 제가 정리했습니다."
 
 categories:
   - Development
@@ -10,8 +10,8 @@ tags:
 toc: true
 toc_sticky: true
 
-date: 2021-02-24
-last_modified_at: 2021-09-12
+date: 2021-09-12
+last_modified_at: 2021-10-05
 
 ---
 
@@ -25,7 +25,7 @@ last_modified_at: 2021-09-12
 
 Unity에서  안드로이드 앱에서 문자 보내는 예제 코드와 자료에 대해 모은 글이다. 
 
-개발할때 배워서 정리했던 C# 문법도 있는데 개인적으로 정리해두려고 썼던 글이라 남겨두려고 한다.
+개발할때 배워서 정리했던 C# 문법도 있는데 개인적으로 보려고 썼던 글이라 남겨두려고 한다.
 
 
 
@@ -48,15 +48,21 @@ Unity에서  안드로이드 앱에서 문자 보내는 예제 코드와 자료�
 
 ### 권한 승인
 
-참고
+{% capture notice-2 %}
+
+📚**참고**
 
 - [Unity 공식문서 - Android Manifest](https://docs.unity3d.com/kr/2021.1/Manual/android-manifest.html)
 - [Naver 블로그 - Android Manifest 생성 경로 및 커스텀](https://m.blog.naver.com/zldejs22/221763899164) 
 - [Tistory 블로그 - 안드로이드 SMS 전송하기](https://travel-nomad.tistory.com/24)
 
+{% endcapture %}
+
+<div class="notice--info">{{ notice-2 | markdownify }}</div>
+
+
+
 유니티 앱에서 문자를 보내게 하려면 안드로이드에서 문자 보내기 권한을 승인하도록 해야 한다.
-
-
 
 프로젝트 빌드 후 `UnityProject\Temp\StagingArea\AndroidManifest.xml` 또는 `UnityManifest.xml` 을 수정해 `UnityProject\Assets\Plugins\Android\AndroidManifest.xml` 위치에 추가하면 안드로이드 매니페스트를 수정할 수 있다. (매니페스트는 안드로이드 앱에 대한 데이터가 포함된 파일이며, 그중에 하드웨어 기능 지원 및 권한 또한 포함되어 있다. 자세한 내용은 위의 유니티 문서 참고)
 다음은 `AndroidManifest.xml` 파일에 추가해야 할 내용이다
@@ -93,9 +99,15 @@ private void RequestPermission()
 
 ### 전송 예제
 
-참고
+{% capture notice-2 %}
+
+📚**참고**
 
 - [rmdwirizki gist - Sample How to Send SMS in Android using Unity3D and SMS Manager](https://gist.github.com/rmdwirizki/87f9e68c7ef6ef809a777eb25f12c3b2#file-sendsms-cs-L52)
+
+{% endcapture %}
+
+<div class="notice--info">{{ notice-2 | markdownify }}</div>
 
 
 
@@ -127,10 +139,16 @@ public string SendSMS(string PhoneNumber, string message)
 
 ### Java class SMSManager 사용 비교
 
-참고
+{% capture notice-2 %}
+
+📚**참고**
 
 - [Naver 블로그 - 안드로이드 네이티브 메서드 호출 방법](https://m.blog.naver.com/hide1202/220240366851)
 - [sitehis 게시물 - SMS, LMS, MMS 발송 방법(Java)](https://www.sitehis.com/spb3/sboard3/read.php?db=talk&uid=556)
+
+{% endcapture %}
+
+<div class="notice--info">{{ notice-2 | markdownify }}</div>
 
 
 
@@ -175,9 +193,15 @@ public string SendSMS(string PhoneNumber, string message)
 
 ## 로컬 푸시 알림
 
-참고
+📚**참고**
+
+{% capture notice-2 %}
 
 - [Unity 공식문서 - Unity Mobile Notifications Package](https://docs.unity3d.com/Packages/com.unity.mobile.notifications@1.0/)
+
+{% endcapture %}
+
+<div class="notice--info">{{ notice-2 | markdownify }}</div>
 
 
 
@@ -236,11 +260,19 @@ public string SendSMS(string PhoneNumber, string message)
 
 ### LINQ
 
-참고
+{% capture notice-2 %}
+
+📚**참고**
 
 - [Microsoft C# Docs - LINQ 쿼리 소개](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries)
 
-LINQ 쿼리의 사용 작업 구분
+{% endcapture %}
+
+<div class="notice--info">{{ notice-2 | markdownify }}</div>
+
+
+
+**LINQ 쿼리의 사용 작업 구분**
 
 1. 데이터 가져오기
 2. 쿼리 만들기
@@ -279,7 +311,8 @@ new StringBuilder(headString).Append(value).ToString()
 
 
 
-
+부족한 글이지만 계속해서 수정을 해 나갈 예정입니다. 개선할 부분이 있다면 말씀해주세요. 읽어주셔서 감사합니다.
+{: .notice--info}
 
 
 
