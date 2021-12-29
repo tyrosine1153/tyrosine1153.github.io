@@ -1,6 +1,6 @@
 ---
 title: "GitHub Action와 Twitter API를 이용해 트위터 자동 봇 만들기"
-excerpt: "한강 물 온도를 알려주는 트위터 자동 봇을 만들었을 때 정리한 내용입니다."
+excerpt: "한강 물 온도를 알려주는 트위터 자동 봇을 만들었던 내용을 정리했습니다."
 
 categories:
   - Development
@@ -10,8 +10,8 @@ tags:
 toc: true
 toc_sticky: true
 
-date: 2021-10-05
-last_modified_at: 2021-10-05
+date: 2021-07-10
+last_modified_at: 2021-07-10
 
 ---
 
