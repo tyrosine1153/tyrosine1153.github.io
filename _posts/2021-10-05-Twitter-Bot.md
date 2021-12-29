@@ -121,10 +121,10 @@ jobs:
         pip install -r requirements.txt
     - name: Tweet
       env:
-        TWITTER_ACCESS_TOKEN_KEY: ${{ secrets.TWITTER_ACCESS_TOKEN_KEY }}
-        TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
-        TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
-        TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+        TWITTER_ACCESS_TOKEN_KEY: $/{{ secrets.TWITTER_ACCESS_TOKEN_KEY /}}
+        TWITTER_ACCESS_TOKEN_SECRET: $/{{ secrets.TWITTER_ACCESS_TOKEN_SECRET /}}
+        TWITTER_CONSUMER_KEY: $/{{ secrets.TWITTER_CONSUMER_KEY /}}
+        TWITTER_CONSUMER_SECRET: $/{{ secrets.TWITTER_CONSUMER_SECRET /}}
       run: python run.py
 ```
 
