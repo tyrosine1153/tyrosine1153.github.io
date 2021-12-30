@@ -1,6 +1,6 @@
 ---
 title: "GitHub Action와 Twitter API를 이용해 트위터 자동 봇 만들기"
-excerpt: "한강 물 온도를 알려주는 트위터 자동 봇을 만들었던 내용을 정리했습니다."
+excerpt: "한강 물 온도를 알려주는 트위터 자동 봇을 만들었을 때 정리한 내용입니다."
 
 categories:
   - Development
@@ -10,8 +10,8 @@ tags:
 toc: true
 toc_sticky: true
 
-date: 2021-07-10
-last_modified_at: 2021-07-10
+date: 2021-10-05
+last_modified_at: 2021-10-05
 
 ---
 
@@ -121,10 +121,10 @@ jobs:
         pip install -r requirements.txt
     - name: Tweet
       env:
-        TWITTER_ACCESS_TOKEN_KEY: $/{{ secrets.TWITTER_ACCESS_TOKEN_KEY /}}
-        TWITTER_ACCESS_TOKEN_SECRET: $/{{ secrets.TWITTER_ACCESS_TOKEN_SECRET /}}
-        TWITTER_CONSUMER_KEY: $/{{ secrets.TWITTER_CONSUMER_KEY /}}
-        TWITTER_CONSUMER_SECRET: $/{{ secrets.TWITTER_CONSUMER_SECRET /}}
+        TWITTER_ACCESS_TOKEN_KEY: ${ { secrets.TWITTER_ACCESS_TOKEN_KEY } }
+        TWITTER_ACCESS_TOKEN_SECRET: ${ { secrets.TWITTER_ACCESS_TOKEN_SECRET } }
+        TWITTER_CONSUMER_KEY: ${ { secrets.TWITTER_CONSUMER_KEY } }
+        TWITTER_CONSUMER_SECRET: ${ { secrets.TWITTER_CONSUMER_SECRET } }
       run: python run.py
 ```
 
@@ -176,10 +176,10 @@ steps:
         pip install -r requirements.txt
 - name: Tweet
 	env:
-        TWITTER_ACCESS_TOKEN_KEY: ${{ secrets.TWITTER_ACCESS_TOKEN_KEY }}
-        TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
-        TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
-        TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+        TWITTER_ACCESS_TOKEN_KEY: ${ { secrets.TWITTER_ACCESS_TOKEN_KEY } }
+        TWITTER_ACCESS_TOKEN_SECRET: ${ { secrets.TWITTER_ACCESS_TOKEN_SECRET } }
+        TWITTER_CONSUMER_KEY: ${ { secrets.TWITTER_CONSUMER_KEY } }
+        TWITTER_CONSUMER_SECRET: ${ { secrets.TWITTER_CONSUMER_SECRET } }
 	run: | 
 		python run.py
 ```
@@ -200,7 +200,7 @@ steps:
 
        ex) Name : TWITTER_CONSUMER_KEY, Value :123456789asdfQWER
 
-  - 이렇게 만든 깃허브 Secret 변수는 workflow 설정에서 `${{ secrets.[변수 이름] }}`으로 접근할 수 있다.
+  - 이렇게 만든 깃허브 Secret 변수는 workflow 설정에서 `${ { secrets.[변수 이름] } }`으로 접근할 수 있다.
 
 
 
