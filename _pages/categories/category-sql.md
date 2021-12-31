@@ -4,7 +4,6 @@ layout: archive
 permalink: categories/sql
 author_profile: true
 sidebar_main: true
-
 ---
 
 {% assign posts = site.categories.SQL%}
