@@ -53,9 +53,9 @@ last_modified_at: 2021-12-31
 
 ## PlayerPrefs
 
-유니티의 클래스인 PlayerPrefs의 함수를 이용해 로컬에 데이터를 저장할 수 있다. **int, float, string자료형의 변수**로 저장이 가능하다.  string인 Key와 저장할 자료형인 Value가 짝을 지어 저장된다.
+유니티의 클래스인 **PlayerPrefs**의 함수를 이용해 로컬에 데이터를 저장할 수 있다. **int, float, string자료형의 단순 변수**를 저장 가능하다.  string인 Key와 저장할 자료형인 Value가 짝을 지어 저장된다.
 
-Window Standalone 빌드에서 PlayerPrefs로 저장된 값은 레지스트리의 `HKEY_CURRENT_USER\Software\[company name]\[product name]` 에 저장이 된다. Window Unity Editor에서 저장된 값은 `HKCU\Software\Unity\UnityEditor\[ExampleCompanyName]\[ExampleProductName]`에 저장이 된다.
+Window Standalone 빌드에서 PlayerPrefs로 저장된 값은 레지스트리의 `HKEY_CURRENT_USER\Software\[company name]\[product name]` 에 저장이 된다. 또, Window Unity Editor에서 저장된 값은 `HKCU\Software\Unity\UnityEditor\[ExampleCompanyName]\[ExampleProductName]`에 저장이 된다.
 
 다음은 내 윈도우의 레지스트리 편집기에서 유니티 에디터에서 저장된 값을 확인한 모습이다.
 
@@ -63,12 +63,14 @@ Window Standalone 빌드에서 PlayerPrefs로 저장된 값은 레지스트리�
 
 그 외에 다른 플랫폼의 저장 경로는 [PlayerPrefs의 공식 문서](https://docs.unity3d.com/ScriptReference/PlayerPrefs.html)에서 참고할 수 있다.
 
-### 장/단점
+### 장단점
 
 - 데이터의 저장과 불러오는 것이 매우 쉽다.
 - 기본적으로 데이터를 저장할 때 암호화가 되어있지 않기때문에 보안에 취약하다.
 
 ### 정적 함수
+
+PlayerPref 클래스에서 지원하는 정적 함수이다.
 
 | 함수명                                      | 설명                                       |
 | ---------------------------------------- | ---------------------------------------- |
@@ -102,11 +104,11 @@ level = PlayerPrefs.GetInt("MyClass_level", 0);
 
 ## CSV
 
-CSV는 comma-separated values 또는 comma-separated variables의 줄임으로, 데이터를 쉼표(,)와 엔터(\n)로 구분한 텍스트 데이터/파일이다. 확장자 `.csv`로 나타낸다. 표 형태의 데이터 구조를 가지고 있기 때문에 **스프레드시트나 데이터베이스의 저장**에 용이하다. 엔터로 구분한 한 줄이 한 개의 행으로, 열 사이를 쉽표를 넣어 구분한다.
+CSV는 comma-separated values 또는 comma-separated variables의 줄임으로, 데이터를 쉼표(,)와 엔터(\n)로 구분한 텍스트 데이터/파일이다. 확장자 `.csv`로 나타낸다. **표 형태의 데이터 구조**를 가지고 있기 때문에 **스프레드시트나 데이터베이스의 저장**에 용이하다. 엔터로 구분한 한 줄이 한 개의 행으로, 열 사이를 쉽표를 넣어 구분한다.
 
 유니티에서 지원하는 클래스는 따로 없기 때문에 직접 파일 입출력을 통해 구현을 한다.
 
-### 장/단점
+### 장단점
 
 - Plain Text로 작성되고 파일의 규칙이 간단하기 때문에 편집 기능 구현의 난이도가 낮고, 직접 편집하기도 쉽다. 
 - 스프레드시트나 엑셀에서 CSV파일로 가져오기 쉽다.
@@ -213,16 +215,18 @@ for (var i = 0; i < data.Count; i++)
 
 ## JSON
 
-JSON(JavaScript Object Notation)은 웹이나 네트워크에서 **서버와 클라이언트 사이에서 데이터를 주고받을때** 사용하는 개방형 표준 포멧으로, 텍스트를 사용하기 때문에 사람이 이해하기 쉽다는 장점이 있다. JSON은 사용범위가 거의 일치하는 XML에 비해 가독성이 좋고 직렬화와 비직렬화 함수를 통해 데이터와 JSON 데이터를 편하게 변환할 수 있다는 장점을 가지고 있다.
+JSON(JavaScript Object Notation)은 웹이나 네트워크에서 **서버와 클라이언트 사이에서 데이터를 주고받을때** 사용하는 개방형 표준 포멧으로, 텍스트를 사용하기 때문에 사람이 이해하기 쉽다. JSON은 사용범위가 비슷한 XML과 비교했을 때 가독성이 좋고 직렬화와 비직렬화 함수를 통해 원본 데이터와 JSON 데이터를 더 편하게 변환할 수 있다는 특징을 갖고있다. 
 
 유니티에서는 JsonUtility 클래스를 사용해 오브젝트를 JSON포맷으로 상호 작용할 수 있다. 
 
 **직렬화** : 데이터 구조나 오브젝트 상태를 동일하거나 다른 컴퓨터 환경에 저장하고 나중에 재구성할 수 있는 포맷으로 변환하는 과정
 
-### 장점
+### 장단점
 
 - 텍스트로 이루어져 사람과 기계 모두 읽고 쓰기 쉽다.
 - 프로그래밍 언어와 플랫폼에 독립적이므로 서로 다른 시스템간에 객체를 교환하기에 좋다.
+- 객체, 배열 등 **다양한 형식으로 데이터를 저장**할 수 있다.
+- 문법 오류에 취약하다.
 
 ### 기본 구조
 
@@ -240,8 +244,9 @@ JSON(JavaScript Object Notation)은 웹이나 네트워크에서 **서버와 클
 }
 ```
 
-
 ### 정적 함수
+
+ JsonUtility 클래스에서 지원하는 정적함수이다.
 
 | 함수명                                      | 설명                                       |
 | ---------------------------------------- | ---------------------------------------- |
