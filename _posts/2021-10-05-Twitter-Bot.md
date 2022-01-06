@@ -62,7 +62,7 @@ last_modified_at: 2021-10-05
 
 Twitter API를 얻고 사용하기 위해서는 트위터에서 Key와 Token을 발급받아야 한다. 
 
-다음 링크에서 접속해 트위터에 회원가입 후 로그인을 한다. https://apps.twitter.com
+다음 링크에서 접속해 트위터에 회원가입 후 로그인을 한다.[Twitter Developer](https://apps.twitter.com)
 
 개발자 계정을 신청한다. (나는 가계정을 만들어 신청했을 때 몇시간 동안 검토 후 거절당했는데, 원래 있던 계정으로 다시 신청하니 검토없이 바로 승인되었다.)
 
